@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot de Cálculo</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .msg-user { background: #def; padding: 10px; border-radius: 8px; margin: 5px 0; }
+        .msg-bot { background: #eee; padding: 10px; border-radius: 8px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h2>Asistente de Cálculo</h2>
+
+    <div>
+        {% for msg in historial %}
+            {% if msg.role == 'user' %}
+                <div class="msg-user"><b>Tú:</b> {{ msg.content }}</div>
+            {% else %}
+                <div class="msg-bot"><b>Bot:</b> {{ msg.content }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="pregunta" placeholder="Escribe tu pregunta..." required style="width: 300px;">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <br>
+
+    <form method="POST" action="{% url 'reset_chat' %}">
+        {% csrf_token %}
+        <button type="submit">Reiniciar conversación</button>
+    </form>
+
+</body>
+</html>
