@@ -1,38 +1,309 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Chatbot de Cálculo</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        .msg-user { background: #def; padding: 10px; border-radius: 8px; margin: 5px 0; }
-        .msg-bot { background: #eee; padding: 10px; border-radius: 8px; margin: 5px 0; }
-    </style>
-</head>
-<body>
-    <h2>Asistente de Cálculo</h2>
+{% load static %}
 
-    <div>
-        {% for msg in historial %}
-            {% if msg.role == 'user' %}
-                <div class="msg-user"><b>Tú:</b> {{ msg.content }}</div>
-            {% else %}
-                <div class="msg-bot"><b>Bot:</b> {{ msg.content }}</div>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <title>Cal-IA</title>
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: #dfe4ea;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* CHAT RESPONSIVO */
+        .chat-container {
+            width: 100%;
+            max-width: 550px;
+            height: 85vh;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-header {
+            background: #0059d6;
+            color: white;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 0.4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* HEADER */
+        .chat-header {
+            background: linear-gradient(135deg, #005eff, #00a2ff);
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* MENSAJES */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: #f1f2f6;
+        }
+
+        /* NUEVO DISEÑO DE MENSAJES */
+        .msg-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        @keyframes fadeMsg {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .msg-row.user {
+            justify-content: flex-end;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid #0078ff;
+            object-fit: cover;
+        }
+
+        .message {
+            padding: 11px 15px;
+            max-width: 70%;
+            border-radius: 18px;
+            font-size: 15px;
+            line-height: 1.4em;
+            transition: 0.2s ease;
+        }
+
+        .msg-user-box {
+            background: #0078ff;
+            color: white;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .msg-bot-box {
+            background: white;
+            border: 1px solid #e1e1e1;
+            border-bottom-left-radius: 4px;
+            color: #333;
+            white-space: pre-wrap;
+            word-break: break-word;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing {
+            display: inline-flex;
+            gap: 5px;
+            padding-left: 3px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #777;
+            border-radius: 50%;
+            animation: blink 1.4s infinite both;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: .2;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: .2;
+            }
+        }
+
+        .chat-input-container {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-input {
+            flex: 1;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .chat-input:focus {
+            background: #f0f0f0;
+        }
+
+        .send-button {
+            background: #005eff;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background: #004ed3;
+        }
+
+        /* RESET */
+        .reset-container {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+            <i class="fa-solid fa-calculator"></i>
+            Cal-IA: Tutor de Cálculo Diferencial
+        </div>
+
+        <div class="chat-messages" id="chatBox">
+            {% if historial|length == 0 %}
+            <div class="msg-row">
+                <img class="avatar" src="{% static 'img/mapache.png' %}">
+                <div class="message msg-bot-box">
+                    ¡Hola! Soy tu tutor mapache de cálculo 🦝✨ Pregúntame lo que quieras.
+                </div>
+            </div>
             {% endif %}
-        {% endfor %}
+
+            {% for msg in historial %}
+            {% if msg.role == 'user' %}
+            <div class="msg-row user">
+                <div class="message msg-user-box">{{ msg.content }}</div>
+                <img class="avatar" src="https://i.imgur.com/5cX1Q4V.png">
+            </div>
+            {% else %}
+            <div class="msg-row">
+                <img class="avatar" src="{% static 'img/mapache.png' %}">
+                <div class="message msg-bot-box">{{ msg.content }}</div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <form method="POST" class="chat-input-container" id="formChat">
+            {% csrf_token %}
+            <input type="text" name="pregunta" id="inputChat" class="chat-input" placeholder="Escribe tu pregunta..."
+                required>
+            <button type="submit" class="send-button">Enviar</button>
+        </form>
+
+        <div class="reset-container">
+            <form method="POST" action="{% url 'reset_chat' %}">
+                {% csrf_token %}
+                <button type="submit" style="background: none; border: none; cursor: pointer; font-size: 20px;"
+                    title="Reiniciar conversación">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </form>
+        </div>
+
     </div>
 
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="pregunta" placeholder="Escribe tu pregunta..." required style="width: 300px;">
-        <button type="submit">Enviar</button>
-    </form>
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <br>
+    <!-- Typing Indicator JS -->
+    <script>
+        const form = document.getElementById("formChat");
+        const chatBox = document.getElementById("chatBox");
 
-    <form method="POST" action="{% url 'reset_chat' %}">
-        {% csrf_token %}
-        <button type="submit">Reiniciar conversación</button>
-    </form>
+        form.addEventListener("submit", () => {
+            // Crear el indicador de escritura
+            const typing = document.createElement("div");
+            typing.classList.add("msg-row");
+            typing.setAttribute("id", "typingIndicator");
+
+            typing.innerHTML = `
+                <img class="avatar" src="{% static 'img/mapache.png' %}">
+                <div class="message msg-bot-box">
+                    <div class="typing">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            `;
+
+            chatBox.appendChild(typing);
+
+            setTimeout(() => {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 50);
+        });
+    </script>
 
 </body>
+
 </html>

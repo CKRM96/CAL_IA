@@ -1,0 +1,394 @@
+[
+  {
+    "id": 1,
+    "tema": "Límites",
+    "dificultad": "básico",
+    "enunciado": "Calcula lim_{x→2} (x^2 - 4) / (x - 2)",
+    "solucion": "Factoriza x^2 - 4 = (x - 2)(x + 2). El límite es 4."
+  },
+  {
+    "id": 2,
+    "tema": "Límites",
+    "dificultad": "básico",
+    "enunciado": "Calcula lim_{x→3} (x^2 - 9) / (x - 3)",
+    "solucion": "Factoriza x^2 - 9 = (x - 3)(x + 3). El límite es 6."
+  },
+  {
+    "id": 3,
+    "tema": "Límites",
+    "dificultad": "básico",
+    "enunciado": "Calcula lim_{x→1} (x^3 - 1) / (x - 1)",
+    "solucion": "Factoriza x^3 - 1 = (x - 1)(x^2 + x + 1). El límite es 3."
+  },
+  {
+    "id": 4,
+    "tema": "Límites",
+    "dificultad": "intermedio",
+    "enunciado": "Calcula lim_{x→0} (sen(x)) / x",
+    "solucion": "El límite clásico es 1."
+  },
+  {
+    "id": 5,
+    "tema": "Límites",
+    "dificultad": "intermedio",
+    "enunciado": "Calcula lim_{x→0} (1 - cos(x)) / x^2",
+    "solucion": "El límite estándar es 1/2."
+  },
+  {
+    "id": 6,
+    "tema": "Límites",
+    "dificultad": "avanzado",
+    "enunciado": "Calcula lim_{x→0} (e^x - 1 - x) / x^2",
+    "solucion": "El límite es 1/2."
+  },
+
+
+  {
+    "id": 7,
+    "tema": "Derivadas",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = 3x^2",
+    "solucion": "f'(x) = 6x."
+  },
+  {
+    "id": 8,
+    "tema": "Derivadas",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = 7x^3 - 4x",
+    "solucion": "f'(x) = 21x^2 - 4."
+  },
+  {
+    "id": 9,
+    "tema": "Derivadas",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = √x",
+    "solucion": "f'(x) = 1/(2√x)."
+  },
+  {
+    "id": 10,
+    "tema": "Derivadas",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = 1/x",
+    "solucion": "f'(x) = -1/x^2."
+  },
+
+
+
+  {
+    "id": 11,
+    "tema": "Regla del producto",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (x^2 + 1)(3x - 2)",
+    "solucion": "f'(x) = 2x(3x - 2) + 3(x^2 + 1)."
+  },
+  {
+    "id": 12,
+    "tema": "Regla del producto",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (x - 4)(x^3)",
+    "solucion": "f'(x) = (1)(x^3) + (x - 4)(3x^2)."
+  },
+  {
+    "id": 13,
+    "tema": "Regla del producto",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (2x^2)(5x - 7)",
+    "solucion": "f'(x) = 4x(5x - 7) + 2x^2(5)."
+  },
+
+
+
+  {
+    "id": 14,
+    "tema": "Regla del cociente",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (x^2 + 1) / (x - 3)",
+    "solucion": "f'(x) = [(2x)(x - 3) - (x^2 + 1)(1)] / (x - 3)^2."
+  },
+  {
+    "id": 15,
+    "tema": "Regla del cociente",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (5x - 4) / x^2",
+    "solucion": "f'(x) = [(5)(x^2) - (5x - 4)(2x)] / x^4."
+  },
+
+
+
+  {
+    "id": 16,
+    "tema": "Trigonometría",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = sen(x)",
+    "solucion": "f'(x) = cos(x)."
+  },
+  {
+    "id": 17,
+    "tema": "Trigonometría",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = cos(x)",
+    "solucion": "f'(x) = -sen(x)."
+  },
+  {
+    "id": 18,
+    "tema": "Trigonometría",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = tan(x)",
+    "solucion": "f'(x) = sec^2(x)."
+  },
+  {
+    "id": 19,
+    "tema": "Trigonometría",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = sec(x)",
+    "solucion": "f'(x) = sec(x)tan(x)."
+  },
+
+
+
+  {
+    "id": 20,
+    "tema": "Regla de la cadena",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (3x - 1)^5",
+    "solucion": "f'(x) = 5(3x - 1)^4 * 3."
+  },
+  {
+    "id": 21,
+    "tema": "Regla de la cadena",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = √(5x^2 - 1)",
+    "solucion": "f'(x) = (1/(2√(5x^2 - 1))) * 10x."
+  },
+  {
+    "id": 22,
+    "tema": "Regla de la cadena",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva f(x) = e^{3x^2 - 1}",
+    "solucion": "f'(x) = e^{3x^2 - 1} * 6x."
+  },
+
+
+
+  {
+    "id": 23,
+    "tema": "Logaritmos",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = ln(x)",
+    "solucion": "f'(x) = 1/x."
+  },
+  {
+    "id": 24,
+    "tema": "Logaritmos",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = ln(3x - 1)",
+    "solucion": "f'(x) = 3/(3x - 1)."
+  },
+  {
+    "id": 25,
+    "tema": "Logaritmos",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva f(x) = ln(x^2 + 4)",
+    "solucion": "f'(x) = (2x)/(x^2 + 4)."
+  },
+
+
+
+  {
+    "id": 26,
+    "tema": "Máximos y mínimos",
+    "dificultad": "intermedio",
+    "enunciado": "Encuentra los puntos críticos de f(x) = x^3 - 6x^2 + 9x",
+    "solucion": "f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3). Puntos críticos: x = 1, 3."
+  },
+  {
+    "id": 27,
+    "tema": "Máximos y mínimos",
+    "dificultad": "avanzado",
+    "enunciado": "Encuentra los puntos críticos de f(x) = x^4 - 8x^2",
+    "solucion": "f'(x) = 4x^3 - 16x = 4x(x^2 - 4). Puntos críticos: x = 0, ±2."
+  },
+
+  {
+    "id": 28,
+    "tema": "Pendientes",
+    "dificultad": "básico",
+    "enunciado": "Encuentra la pendiente de f(x) = x^2 + 2x en x = 3",
+    "solucion": "f'(x) = 2x + 2. f'(3) = 8."
+  },
+
+  {
+    "id": 29,
+    "tema": "Pendientes",
+    "dificultad": "intermedio",
+    "enunciado": "Encuentra la pendiente de f(x) = 3x^3 en x = 2",
+    "solucion": "f'(x) = 9x^2. f'(2) = 36."
+  },
+
+
+
+  {
+    "id": 30,
+    "tema": "Derivadas",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = x e^x",
+    "solucion": "f'(x) = e^x + x e^x."
+  },
+  {
+    "id": 31,
+    "tema": "Derivadas",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = x^2 ln(x)",
+    "solucion": "f'(x) = 2x ln(x) + x."
+  },
+  {
+    "id": 32,
+    "tema": "Derivadas",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva f(x) = e^{2x} sin(x)",
+    "solucion": "f'(x) = e^{2x}(2 sin(x) + cos(x))."
+  },
+
+
+
+  {
+    "id": 33,
+    "tema": "Razón de cambio",
+    "dificultad": "intermedio",
+    "enunciado": "La posición de una partícula es s(t) = t^3 - 6t. Encuentra la velocidad.",
+    "solucion": "v(t) = s'(t) = 3t^2 - 6."
+  },
+  {
+    "id": 34,
+    "tema": "Razón de cambio",
+    "dificultad": "intermedio",
+    "enunciado": "Dada A(r) = πr^2, encuentra dA/dr",
+    "solucion": "dA/dr = 2πr."
+  },
+
+
+
+  {
+    "id": 35,
+    "tema": "Límites",
+    "dificultad": "avanzado",
+    "enunciado": "Calcula lim_{x→0} (tan(x) - x) / x^3",
+    "solucion": "El límite es 2/3."
+  },
+  {
+    "id": 36,
+    "tema": "Límites",
+    "dificultad": "avanzado",
+    "enunciado": "Calcula lim_{x→∞} (sqrt(x^2 + x) - x)",
+    "solucion": "El límite es 1/2."
+  },
+
+
+
+  {
+    "id": 37,
+    "tema": "Derivación implícita",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva implícitamente: x^2 + y^2 = 25",
+    "solucion": "2x + 2y y' = 0 → y' = -x/y."
+  },
+  {
+    "id": 38,
+    "tema": "Derivación implícita",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva implícitamente: xy = 5",
+    "solucion": "x y' + y = 0 → y' = -y/x."
+  },
+
+
+
+  {
+    "id": 39,
+    "tema": "Optimización",
+    "dificultad": "avanzado",
+    "enunciado": "Una caja sin tapa debe tener volumen 32 cm³. Minimiza el área.",
+    "solucion": "Expresión: A = x^2 + 4x h y x^2 h = 32. Reemplaza h y deriva."
+  },
+  {
+    "id": 40,
+    "tema": "Optimización",
+    "dificultad": "intermedio",
+    "enunciado": "Encuentra los puntos críticos de f(x) = x^2 + 4/x",
+    "solucion": "f'(x) = 2x - 4/x^2 = 0 → x = ∛2."
+  },
+
+ 
+  {
+    "id": 41,
+    "tema": "Exponenciales",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = e^x",
+    "solucion": "f'(x) = e^x."
+  },
+  {
+    "id": 42,
+    "tema": "Exponenciales",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = 5e^{2x}",
+    "solucion": "f'(x) = 10e^{2x}."
+  },
+
+ 
+
+  {
+    "id": 43,
+    "tema": "Derivadas",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = ln(x) / x",
+    "solucion": "f'(x) = (1/x * x - ln(x)) / x^2."
+  },
+  {
+    "id": 44,
+    "tema": "Trigonometría",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva f(x) = sin(x) cos(x)",
+    "solucion": "f'(x) = cos^2(x) - sin^2(x)."
+  },
+  {
+    "id": 45,
+    "tema": "Regla del producto",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = (x^2)(ln(x))",
+    "solucion": "f'(x) = 2x ln(x) + x."
+  },
+  {
+    "id": 46,
+    "tema": "Límites",
+    "dificultad": "básico",
+    "enunciado": "Calcula lim_{x→1} (x^5 - 1) / (x - 1)",
+    "solucion": "Usa cociente notable. El límite es 5."
+  },
+  {
+    "id": 47,
+    "tema": "Límites",
+    "dificultad": "intermedio",
+    "enunciado": "Calcula lim_{x→0} (e^x - e^{-x}) / x",
+    "solucion": "El límite es 2."
+  },
+  {
+    "id": 48,
+    "tema": "Derivación implícita",
+    "dificultad": "avanzado",
+    "enunciado": "Deriva implícitamente: x^3 + y^3 = 9xy",
+    "solucion": "3x^2 + 3y^2 y' = 9(y + x y')."
+  },
+  {
+    "id": 49,
+    "tema": "Producto",
+    "dificultad": "básico",
+    "enunciado": "Deriva f(x) = x(4x + 1)",
+    "solucion": "f'(x) = 4x + 1 + 4x."
+  },
+  {
+    "id": 50,
+    "tema": "Exponenciales",
+    "dificultad": "intermedio",
+    "enunciado": "Deriva f(x) = x^2 e^{-x}",
+    "solucion": "f'(x) = 2x e^{-x} - x^2 e^{-x}."
+  }
+]
