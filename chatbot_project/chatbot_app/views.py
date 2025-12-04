@@ -40,7 +40,7 @@ def es_tema_matematicas(pregunta):
     pregunta = pregunta.lower()
 
     palabras_clave = [
-        "límite", "limite", "derivada", "derivar", "integral", "cálculo", "calculo", "función",
+        "límite", "limite", "derivada", "derivar","derivo", "integral", "cálculo", "calculo", "función",
         "funciones", "tasa", "razón", "razon", "pendiente", "optimización",
         "máximo", "mínimo", "extremo", "logaritmo", "trigonometría", "cos", "sen",
         "tan", "lim", "dx", "dy", "d/dx", "d/dt", "e^", "polinomio"
@@ -104,6 +104,6 @@ def chat_view(request):
 
 def reset_chat(request):
     request.session["historial"] = [
-        {"role": "assistant", "content": "¡Conversación reiniciada! ¿En qué tema de cálculo quieres ayuda ahora?"}
+        {"role": "assistant", "content": "¡Hola! Soy tu tutor mapache de cálculo 🦝✨ ¿En qué tema de cálculo quieres ayuda ahora?"}
     ]
     return redirect("chat")
